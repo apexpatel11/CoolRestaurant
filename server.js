@@ -40,6 +40,17 @@ app.get('/reserveTable', function(req, res){
 	res.sendFile(path.join(__dirname, 'reserveTable.html'));
 })
 
+app.get('/api/tables/', function(req, res){
+
+	for (var i=0; i < customers.length; i++){
+		res.json(customers[i]);
+
+	}
+})
+
+
+// Create New Customers - takes in JSON input
+
 app.post('/api/tables/new', function(req, res){
 
 	var newCustomer = req.body;

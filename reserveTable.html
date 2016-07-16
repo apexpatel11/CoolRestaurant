@@ -34,24 +34,24 @@
 							</div>
 
 							<div class="form-group">
-								<label for="">Role</label>
-								<input type="text" class="form-control" id="role" placeholder="">
+								<label for="">Phone Number</label>
+								<input type="text" class="form-control" id="number" placeholder="">
 							</div>
 
 							<div class="form-group">
-								<label for="">Age</label>
-								<input type="text" class="form-control" id="age" placeholder="">
+								<label for="">Email</label>
+								<input type="text" class="form-control" id="email" placeholder="">
 							</div>
 
 							<div class="form-group">
-								<label for="">Force Points</label>
-								<input type="text" class="form-control" id="forcepoints" placeholder="">
+								<label for="">Unique ID</label>
+								<input type="text" class="form-control" id="userID" placeholder="">
 							</div>
 
 						</form>
 						<br>
 						<div class="text-right">
-							<button type="submit" class="btn btn-primary btn-md" id="addBtn"></span><span class="glyphicon glyphicon-fire"></span> Add to the Force</button>
+							<button type="submit" class="btn btn-primary btn-md" id="addBtn"></span><span class="glyphicon glyphicon-fire"></span> Make Your Reservation</button>
 						</div>
 					</div>
 				</div>
@@ -65,19 +65,19 @@
 		// Question: What does this code do?
 		$('#addBtn').on("click", function(){
 
-			var newCharacter =
+			var newCustomer =
 			{
-				name: $("#name").val().trim(),
-				role: $("#role").val().trim(),
-				age: $("#age").val().trim(),
-				forcePoints: $("#forcepoints").val().trim()
+				customerName: $("#name").val().trim(),
+				phoneNumber: $("#number").val().trim(),
+				customerEmail: $("#email").val().trim(),
+				customerID: $("#userID").val().trim()
 			};
 
 			// Question: What does this code do??
-			$.post( "http://localhost:3000/api/new", newCharacter)
+			$.post( "http://localhost:3000/api/tables/new", newCustomer)
 				.done(function(data){
 					console.log(data);
-					alert("Adding character...")
+					alert("Adding reservation...")
 				})
 
 			return false;
