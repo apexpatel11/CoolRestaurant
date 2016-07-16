@@ -40,31 +40,6 @@ app.get('/reserveTable', function(req, res){
 	res.sendFile(path.join(__dirname, 'reserveTable.html'));
 })
 
-// Search for Specific Character (or all characters) - provides JSON
-// app.get('/api/:characters?', function(req, res){
-
-// 	var chosen = req.params.characters;
-
-// 	if(chosen){
-// 		console.log(chosen);
-
-// 		for (var i=0; i <characters.length; i++){
-
-// 			if (chosen == characters[i].routeName){
-// 				res.json(characters[i]);
-// 				return;
-// 			}
-// 		}
-
-// 		res.json(false);
-// 	}
-
-// 	else{
-// 		res.json(characters);
-// 	}
-// })
-
-// Create New Customers - takes in JSON input
 app.post('/api/tables/new', function(req, res){
 
 	var newCustomer = req.body;
