@@ -32,12 +32,12 @@ app.get('/', function(req, res){
 	res.sendFile(path.join(__dirname, 'index.html'));
 })
 
-app.get('/tables', function(req, res){
-	res.sendFile(path.join(__dirname, 'tables.html'));
+app.get('/viewTables', function(req, res){
+	res.sendFile(path.join(__dirname, 'viewTables.html'));
 })
 
-app.get('/reserve', function(req, res){
-	res.sendFile(path.join(__dirname, 'reserve.html'));
+app.get('/reserveTable', function(req, res){
+	res.sendFile(path.join(__dirname, 'reserveTable.html'));
 })
 
 // Search for Specific Character (or all characters) - provides JSON
@@ -64,7 +64,7 @@ app.get('/reserve', function(req, res){
 // 	}
 // })
 
-// Create New Characters - takes in JSON input
+// Create New Customers - takes in JSON input
 app.post('/api/tables/new', function(req, res){
 
 	var newCustomer = req.body;
